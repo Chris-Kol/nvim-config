@@ -10,6 +10,6 @@ return {
   -- Apply the colorscheme after it loads
   init = function()
     -- This still runs during startup, but only after the plugin is loaded
-    vim.cmd.colorscheme "catppuccin"
+    vim.cmd.colorscheme("catppuccin")
   end,
 }
