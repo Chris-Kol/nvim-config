@@ -1,9 +1,10 @@
 return {
   {
     "williamboman/mason.nvim",
-    init = function()
+    config = function()
       require("mason").setup()
     end,
+    priority = 100,
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -16,6 +17,9 @@ return {
         },
       })
     end,
+    dependencies = {
+      "williamboman/mason.nvim"
+    },
   },
   {
     "neovim/nvim-lspconfig",
@@ -29,5 +33,9 @@ return {
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
     end,
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim"
+    },
   },
 }
